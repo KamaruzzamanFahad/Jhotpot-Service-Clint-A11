@@ -13,7 +13,6 @@ const Login = () => {
         setlooding,
         LoginByEmail,
         LiginByGoogle,
-        LiginByGithub,
     } = useContext(AuthContext)
 
     const loginsucces = () => {
