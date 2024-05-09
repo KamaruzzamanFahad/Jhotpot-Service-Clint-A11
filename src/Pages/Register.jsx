@@ -1,12 +1,11 @@
 
 import { useContext, useState } from "react";
 import { Link, useNavigate, Navigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet-async";
 import { FaEyeSlash } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
-import { updateProfile } from 'firebase/auth';
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from 'sweetalert2'
 
