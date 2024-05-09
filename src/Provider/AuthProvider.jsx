@@ -2,8 +2,6 @@ import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStat
 import { createContext, useState } from 'react'
 import app from '../Pages/Config';
 
-
-
 export const AuthContext = createContext(null)
 const auth = getAuth(app)
 const GoogleProvider = new GoogleAuthProvider();
@@ -34,11 +32,6 @@ const AuthProvider = ({ children }) => {
         
         signOut(auth)
     }
-
-
-
-
-
 
 
 
