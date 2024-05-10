@@ -47,7 +47,7 @@ const AddService = () => {
         const item = { name, price, detils, image,area, username, email, userimage }
         console.log(item)
 
-        axios.post('http://localhost:5000/AddService', item)
+        axios.post('http://localhost:5000/AddService', item, {withCredentials: true})
             .then(res => {
                 console.log(res.data)
                 if (res.data.insertedId) {

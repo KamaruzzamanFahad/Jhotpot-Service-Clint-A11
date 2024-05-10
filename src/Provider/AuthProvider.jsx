@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { createContext, useState } from 'react'
 import app from '../Pages/Config';
+import axios from 'axios';
 
 export const AuthContext = createContext(null)
 const auth = getAuth(app)
@@ -40,7 +41,7 @@ const AuthProvider = ({ children }) => {
 
 
     onAuthStateChanged(auth, (user) =>{
-        const email = currentuser?.email || user?.email;
+        const email = user?.email || user?.email;
         const useremail = { email };
         if(user){
             console.log(user)
@@ -51,6 +52,7 @@ const AuthProvider = ({ children }) => {
             .then(res =>{
                 console.log(res.data)
             })
+            
         }
         else{
             console.log('user log out')

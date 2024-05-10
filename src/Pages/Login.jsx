@@ -4,6 +4,7 @@ import { FaEyeSlash } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 
 
@@ -38,6 +39,7 @@ const Login = () => {
                 loginsucces();
             })
             .catch(error => toast.error(error.message))
+            
 
     }
 
