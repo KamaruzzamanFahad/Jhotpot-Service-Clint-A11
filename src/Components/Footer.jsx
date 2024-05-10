@@ -17,6 +17,11 @@ const Footer = () => {
         }
     });
 
+    const fildinput = {
+        color: (theme == "light") ? 'black' : 'rgb(240, 240, 240)',
+        'background-color': (theme == "light") ? 'white' : '#ffffff22',
+    };
+
     return (
         <div className={`${theme}`}>
             <footer className={`${theme} flex flex-col lg:flex-row gap-10 items-center  justify-between p-10`}>
@@ -71,8 +76,8 @@ const Footer = () => {
                         <label className="label mt-2">
                             <span>Enter your e-mail to get the latest Jhotpot Service info</span>
                         </label>
-                        <div className="join mt-2 bg-red-600 w-[95%]">
-                            <input type="text" placeholder="Your e-mail" className="input input-bordered join-item w-full" />
+                        <div className="join mt-2 w-[95%]">
+                            <input style={fildinput} type="text" placeholder="Your e-mail" className="input input-bordered join-item w-full" />
                             <button disabled className="bg-[#FF6C1A] text-white rounded-l-none ml-[-2px]">Subscribe</button>
                         </div>
                         <img src="socai.png" width={'30%'} alt="" className='mt-4' />

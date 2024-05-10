@@ -15,6 +15,8 @@ import AuthProvider from './Provider/AuthProvider.jsx';
 import Login from './Pages/Login.jsx';
 import Register from './Pages/Register.jsx';
 import LogRegiProtect from './Protected/LogRegiProtect.jsx';
+import AddService from './Pages/AddService.jsx';
+import ProtectedRout from './Protected/ProtectedRout.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -32,6 +34,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<LogRegiProtect><Register></Register></LogRegiProtect>,
+      },
+      {
+        path:'/addservice',
+        element:<ProtectedRout><AddService></AddService></ProtectedRout>
       }
     ]
   }
