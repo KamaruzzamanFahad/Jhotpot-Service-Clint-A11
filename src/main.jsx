@@ -17,6 +17,9 @@ import Register from './Pages/Register.jsx';
 import LogRegiProtect from './Protected/LogRegiProtect.jsx';
 import AddService from './Pages/AddService.jsx';
 import ProtectedRout from './Protected/ProtectedRout.jsx';
+import AllServices from './Pages/AllServices.jsx';
+import ServiceDetils from './Pages/ServiceDetils.jsx';
+import axios from 'axios';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -38,7 +41,16 @@ const router = createBrowserRouter([
       {
         path:'/addservice',
         element:<ProtectedRout><AddService></AddService></ProtectedRout>
-      }
+      },
+      {
+        path:'/allservices',
+        element:<AllServices></AllServices>,
+      },
+      {
+        path:'/services/:id',
+        element:<ProtectedRout><ServiceDetils></ServiceDetils></ProtectedRout>,
+        loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+      },
     ]
   }
 ])

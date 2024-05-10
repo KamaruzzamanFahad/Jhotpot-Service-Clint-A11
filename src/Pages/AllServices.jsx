@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const PopullerService = () => {
+const AllServices = () => {
     const [service, setservice] = useState([])
     const [count, setcount] = useState(0)
     axios.get('http://localhost:5000/services', { withCredentials: true })
@@ -12,14 +12,10 @@ const PopullerService = () => {
         })
     console.log(service)
 
+
     return (
         <div>
-            <div>
-                <h1 className='text-center mt-14 mb-2'>Popular Services</h1>
-                <p className='px-[5%] md:px-[10%] xl:px-[20%] text-center mb-10'>Explore this section to discover the features and functionalities users love most. Find helpful resources and guides to streamline your experience, all in one convenient place.</p>
-            </div>
-
-            <div className='grid grid-cols-1 xl:grid-cols-2 gap-4 mt-10'>
+            <div className='grid grid-cols-1 gap-4 mt-10 mb-6'>
 
                 <div className={count == 1 ? `hidden` : `flex justify-end items-cente w-full `}>
                     <span className="loading loading-spinner text-red-500 loading-lg"></span>
@@ -39,23 +35,17 @@ const PopullerService = () => {
                                 </div>
                                 <h1 className='text-3xl'>{item.name}</h1>
                                 <p>{item.price}</p>
+                                <p>{item.area}</p>
                                 <p className='w-[90%]'>{item.detils.substring(0, 90)}</p>
-                               <Link to={`/services/${item._id}`}> <button className='bg-[#FF6C1A] w-72 text-black'>View Detail</button></Link>
+                                <button className='bg-[#FF6C1A] w-72'>View Detail</button>
                             </div>
                         </div>
                     ))
                 }
             </div>
-            <div className={count == 0 ? `hidden` : `flex justify-center items-center`}>
-                <Link to={'/allservices'}>
-                    <button className='bg-[#FF6C1A] w-72 m-5 font-semibold text-black'>Show All</button>
-                </Link>
-            </div>
-
-
         </div>
 
     );
 };
 
-export default PopullerService;
+export default AllServices;
