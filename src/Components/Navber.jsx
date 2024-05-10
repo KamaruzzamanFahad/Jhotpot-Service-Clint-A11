@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { NavLink, } from 'react-router-dom';
+import {Link, NavLink, } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
 
@@ -61,7 +61,12 @@ const Navber = () => {
                             </li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Eco-Craft</a>
+                    <Link to={'/'}>
+                        <div>
+                            <img className='w-32' src="/jotpotlogo.png" alt="" />
+                            <p>Jhotpot Service</p>
+                        </div>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
 
