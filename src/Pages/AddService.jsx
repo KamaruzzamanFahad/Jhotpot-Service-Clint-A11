@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from 'react';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../Provider/AuthProvider';
 import { Helmet } from "react-helmet-async";
+import usePostData from '../CustomHooks/usePostData';
+import axios from 'axios';
 
 const AddService = () => {
 
@@ -41,32 +43,27 @@ const AddService = () => {
         const username = user.displayName;
         const email = user.email;
         const userimage = user.photoURL;
-        const item = { name, price, detils, image, username, email,userimage }
+        const item = { name, price, detils, image, username, email, userimage }
         console.log(item)
 
-        fetch('https://server-jute-wooden.vercel.app/craft', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(item),
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.insertedId) {
+        axios.post('http://localhost:5000/AddService', item)
+            .then(res => {
+                console.log(res.data)
+                if (res.data.insertedId) {
                     form.reset();
                     Swal.fire({
                         title: 'Success !',
-                        text: 'Item Added Successfully',
+                        text: 'Service Added Successfully',
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     })
                 }
             })
 
-    }
 
+
+
+    }
 
 
     return (
@@ -78,7 +75,7 @@ const AddService = () => {
 
                 <form onSubmit={handlesubmit} action="" className='grid grid-cols-1 md:grid-cols-2 gap-5 mt-5'>
                     <div className='flex gap-3'>
-                        <img src={user.photoURL} alt="" className='w-14'/>
+                        <img src={user.photoURL} alt="" className='w-14' />
                         <div>
                             <p className='text-xl font-semibold'>{user.displayName}</p>
                             <p>{user.email}</p>
