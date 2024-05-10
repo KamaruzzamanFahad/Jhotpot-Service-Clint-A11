@@ -40,15 +40,27 @@ const AuthProvider = ({ children }) => {
 
 
     onAuthStateChanged(auth, (user) =>{
+        const email = currentuser?.email || user?.email;
+        const useremail = { email };
         if(user){
             console.log(user)
             setuser(user)
             setlooding(false)
+
+            axios.post('http://localhost:5000/jwt',useremail, {withCredentials: true,})
+            .then(res =>{
+                console.log(res.data)
+            })
         }
         else{
             console.log('user log out')
             setlooding(false)
             setuser(null)
+
+            axios.post('http://localhost:5000/logout',useremail,{withCredentials: true,})
+            .then(res =>{
+                console.log(res.data)
+            })
         }
     })
 

@@ -40,10 +40,11 @@ const AddService = () => {
         const price = form.price.value;
         const detils = form.detils.value;
         const image = form.image.value;
+        const area = form.area.value;
         const username = user.displayName;
         const email = user.email;
         const userimage = user.photoURL;
-        const item = { name, price, detils, image, username, email, userimage }
+        const item = { name, price, detils, image,area, username, email, userimage }
         console.log(item)
 
         axios.post('http://localhost:5000/AddService', item)
