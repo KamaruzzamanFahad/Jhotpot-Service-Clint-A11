@@ -126,7 +126,7 @@ const Register = () => {
                                     <input style={fildinput} name='photoURL' type="url" placeholder="photoURL" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control mt-1">
-                                    <button className="btn w-fu btn-primary bg-blue-500 text-white outline-none border-none">Register</button>
+                                    <button className="btn w-fu  bg-[#FF6C1A] text-white outline-none border-none">Register</button>
                                 </div>
                             </form>
                             <p className="text-sm text-center">Already have an account? <Link to={'/login'}>Login</Link> </p>
