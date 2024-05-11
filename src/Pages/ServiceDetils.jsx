@@ -35,7 +35,7 @@ const ServiceDetils = () => {
         const serviceName = name;
         const serviceImag = image;
         const providerEmail = email;
-        const providerName = name;
+        const providerName = username;
         const Serviceprice = price;
         const userEMail = user.email;
         const userName = user.displayName;
