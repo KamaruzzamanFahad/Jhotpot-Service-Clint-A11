@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const ServiceDetils = () => {
     const { user } = useContext(AuthContext)
@@ -54,7 +56,24 @@ const ServiceDetils = () => {
             status,
         };
         console.log(item)
-        
+
+        axios.post('http://localhost:5000/addpurchase', item, {withCredentials: true})
+        .then(res => {
+            console.log(res.data)
+            if(res.data.insertedId){
+                console.log('done')
+                const modal = document.getElementById("my_modal_4");
+                modal.close();
+                
+                event.target.reset();
+                    Swal.fire({
+                        title: 'Success !',
+                        text: 'Purchase Successful',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+            }
+        })
     }
 
 
