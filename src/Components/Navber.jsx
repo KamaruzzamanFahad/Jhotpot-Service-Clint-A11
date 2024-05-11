@@ -56,7 +56,7 @@ const Navber = () => {
                                     <li><NavLink to={'/addservice'}>Add Service</NavLink></li>
                                     <li><NavLink to={'/manageservice'}>Manage Service</NavLink></li>
                                     <li><NavLink to={'/bookedservices'}>Booked-Services</NavLink></li>
-                                    <li><NavLink to={'/'}>Service-To-Do</NavLink></li>
+                                    <li><NavLink to={'/servicetodo'}>Service-To-Do</NavLink></li>
                                 </ul>
                             </li>
                         </ul>
@@ -80,7 +80,7 @@ const Navber = () => {
                                     <li><NavLink to={'/addservice'}>Add Service</NavLink></li>
                                     <li><NavLink to={'/manageservice'}>Manage Service</NavLink></li>
                                     <li><NavLink to={'/bookedservices'}>Booked-Services</NavLink></li>
-                                    <li><NavLink to={'/'}>Service-To-Do</NavLink></li>
+                                    <li><NavLink to={'/servicetodo'}>Service-To-Do</NavLink></li>
                                 </ul>
                             </details>
                         </li>

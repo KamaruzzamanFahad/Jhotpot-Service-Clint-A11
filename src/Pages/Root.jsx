@@ -15,7 +15,7 @@ const Root = () => {
     });
 
     return (
-        <div>
+        <div className={`${theme}`}>
             <ToastContainer></ToastContainer>
             <div className={`${theme} px-[6%]`} >
                 <Navber></Navber>

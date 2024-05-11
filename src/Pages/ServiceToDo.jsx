@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 
-const BookedService = () => {
+const ServiceToDo = () => {
     const [service, setservice] = useState([])
     const [count, setcount] = useState(0)
     const { user } = useContext(AuthContext);
     useEffect(() => {
-        axios.get(`http://localhost:5000/bookedservices?email=${user.email}`, { withCredentials: true })
+        axios.get(`http://localhost:5000/servicetodo?email=${user.email}`, { withCredentials: true })
             .then(res => {
                 setservice(res.data)
                 setcount(1)
@@ -34,19 +34,25 @@ const BookedService = () => {
         'background-color': (theme == "light") ? 'white' : '#ffffff22',
     };
 
+    const handlechange = (event) => {
+        console.log(event.target.value)
+        // find patch system in youtube
+        //and implement patch
+    }
+
     return (
         <div className='min-h-[50vh]'>
             <Helmet>
-                <title>Booked Services</title>
+                <title>To Do Services</title>
             </Helmet>
             <div className='grid grid-cols-1 gap-5 mt-10'>
 
                 <div className={count == 1 ? `hidden` : `flex justify-end items-cente w-full `}>
                     <span className="loading loading-spinner text-red-500 loading-lg"></span>
                 </div>
-                <h1 className='text-center'>Booked Services</h1>
+                <h1 className='text-center'>To Do Services</h1>
                 {
-                    count == 1 && service.length == 0 ? <h1 className='text-center text-2xl'>you haven't booked any service yet</h1> :''
+                    count == 1 && service.length == 0 ? <h1 className='text-center text-2xl'>you haven't  any service for To Do</h1> : ''
                 }
                 <table className="table">
                     {/* head */}
@@ -57,6 +63,7 @@ const BookedService = () => {
                                     <input type="checkbox" className="checkbox" />
                                 </label>
                             </th>
+                            <th>Customer</th>
                             <th>serviceName</th>
                             <th>Price</th>
                             <th>Status</th>
@@ -72,7 +79,14 @@ const BookedService = () => {
                                 <tr>
                                     <td>
                                         <div className="flex items-center gap-3">
-                                                <img src={item.serviceImag} alt=""  className='w-28  rounded-xl'/>
+                                            <img src={item.serviceImag} alt="" className='w-28  rounded-xl' />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <div className="font-bold">{item.userName}</div>
+                                            <div className="text-sm opacity-50">{item.userEMail}</div>
+                                            <div className="text-sm opacity-50">{item.instructions}</div>
                                         </div>
                                     </td>
                                     <td>
@@ -82,7 +96,11 @@ const BookedService = () => {
                                     </td>
                                     <td>{item.Serviceprice}</td>
                                     <th>
-                                        <button className="btn btn-ghost btn-xs">{item.status}</button>
+                                        <select onChange={handlechange} className={theme} defaultValue={item.status}>
+                                            <option style={normal}>pending</option>
+                                            <option>working</option>
+                                            <option>completed</option>
+                                        </select>
                                     </th>
                                 </tr>
                             ))
@@ -93,7 +111,7 @@ const BookedService = () => {
                 </table>
             </div>
             <div className={count == 1 ? `hidden` : `flex justify-center items-center`}>
-                
+
             </div>
 
 
@@ -102,4 +120,4 @@ const BookedService = () => {
     );
 };
 
-export default BookedService;
+export default ServiceToDo;
