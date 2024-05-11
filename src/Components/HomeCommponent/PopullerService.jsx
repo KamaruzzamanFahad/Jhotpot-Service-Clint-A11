@@ -1,15 +1,17 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const PopullerService = () => {
     const [service, setservice] = useState([])
     const [count, setcount] = useState(0)
-    axios.get('http://localhost:5000/services', { withCredentials: true })
-        .then(res => {
-            setservice(res.data)
-            setcount(1)
-        })
+    useEffect(() => {
+        axios.get('http://localhost:5000/services', { withCredentials: true })
+            .then(res => {
+                setservice(res.data)
+                setcount(1)
+            })
+    }, [])
     console.log(service)
 
     return (
@@ -40,7 +42,7 @@ const PopullerService = () => {
                                 <h1 className='text-3xl'>{item.name}</h1>
                                 <p>{item.price}</p>
                                 <p className='w-[90%]'>{item.detils.substring(0, 90)}</p>
-                               <Link to={`/services/${item._id}`}> <button className='bg-[#FF6C1A] w-72 text-black'>View Detail</button></Link>
+                                <Link to={`/services/${item._id}`}> <button className='bg-[#FF6C1A] w-72 text-black'>View Detail</button></Link>
                             </div>
                         </div>
                     ))

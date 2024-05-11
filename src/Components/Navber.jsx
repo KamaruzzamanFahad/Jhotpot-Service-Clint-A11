@@ -55,7 +55,7 @@ const Navber = () => {
                                 <ul className="p-2 w-48 z-[20]">
                                     <li><NavLink to={'/addservice'}>Add Service</NavLink></li>
                                     <li><NavLink to={'/manageservice'}>Manage Service</NavLink></li>
-                                    <li><NavLink to={'/'}>Booked-Services</NavLink></li>
+                                    <li><NavLink to={'/bookedservices'}>Booked-Services</NavLink></li>
                                     <li><NavLink to={'/'}>Service-To-Do</NavLink></li>
                                 </ul>
                             </li>
@@ -79,7 +79,7 @@ const Navber = () => {
                                 <ul style={mebustyl} className="p-2 w-56 z-[10]">
                                     <li><NavLink to={'/addservice'}>Add Service</NavLink></li>
                                     <li><NavLink to={'/manageservice'}>Manage Service</NavLink></li>
-                                    <li><NavLink to={'/'}>Booked-Services</NavLink></li>
+                                    <li><NavLink to={'/bookedservices'}>Booked-Services</NavLink></li>
                                     <li><NavLink to={'/'}>Service-To-Do</NavLink></li>
                                 </ul>
                             </details>

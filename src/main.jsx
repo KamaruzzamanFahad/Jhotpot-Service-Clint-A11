@@ -21,6 +21,8 @@ import AllServices from './Pages/AllServices.jsx';
 import ServiceDetils from './Pages/ServiceDetils.jsx';
 import axios from 'axios';
 import ManageService from './Pages/ManageService.jsx';
+import UpdateService from './Pages/UpdateService.jsx';
+import BookedService from './Pages/BookedService.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -55,6 +57,14 @@ const router = createBrowserRouter([
       {
         path:'/manageservice',
         element:<ProtectedRout><ManageService></ManageService></ProtectedRout>
+      },
+      {
+        path:'/updateservice',
+        element:<ProtectedRout><UpdateService></UpdateService></ProtectedRout>
+      },
+      {
+        path:'/bookedservices',
+        element:<ProtectedRout><BookedService></BookedService></ProtectedRout>
       },
     ]
   }

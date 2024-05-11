@@ -1,19 +1,54 @@
 import axios from 'axios';
-import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const ManageService = () => {
     const [service, setservice] = useState([])
     const [count, setcount] = useState(0)
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
+    const [dependency,setdependency] = useState([0,2])
 
-    axios.get(`http://localhost:5000/myservice?email=${user.email}`, { withCredentials: true })
-        .then(res => {
-            setservice(res.data)
-            setcount(1)
-        })
-    console.log(service)
+    useEffect(() => {
+        axios.get(`http://localhost:5000/myservice?email=${user.email}`, { withCredentials: true })
+            .then(res => {
+                setservice(res.data)
+                setcount(1)
+            })
+    }, [dependency])
+    const navigate = useNavigate();
+
+    const updatehandle = (item) => {
+        navigate('/updateservice',{state: item})
+    }
+
+    const handledelete = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.delete(`http://localhost:5000/delete/${id}`, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.deletedCount > 0) {
+                            setdependency([8,3,4])
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
+            }
+        });
+    }
 
     return (
         <div>
@@ -39,8 +74,8 @@ const ManageService = () => {
                                 <p>{item.price}</p>
                                 <p className='w-[90%]'>{item.detils.substring(0, 90)}</p>
                                 <div className='flex gap-3'>
-                                    <Link className='w-full' to={`/services/${item._id}`}> <button className='bg-[#FF6C1A] w-full text-black'>Update</button></Link>
-                                    <button className='bg-red-500 w-full text-black'>Delete</button>
+                                    <button onClick={()=> updatehandle(item)} className='bg-[#FF6C1A] w-full text-black'>Edit</button>
+                                    <button onClick={() => handledelete(item._id)} className='bg-red-500 w-full text-black'>Delete</button>
                                 </div>
                             </div>
                         </div>
