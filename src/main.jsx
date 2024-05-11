@@ -20,6 +20,7 @@ import ProtectedRout from './Protected/ProtectedRout.jsx';
 import AllServices from './Pages/AllServices.jsx';
 import ServiceDetils from './Pages/ServiceDetils.jsx';
 import axios from 'axios';
+import ManageService from './Pages/ManageService.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         path:'/services/:id',
         element:<ProtectedRout><ServiceDetils></ServiceDetils></ProtectedRout>,
         loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`,{credentials: 'include'})
+      },
+      {
+        path:'/manageservice',
+        element:<ProtectedRout><ManageService></ManageService></ProtectedRout>
       },
     ]
   }

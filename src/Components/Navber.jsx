@@ -50,11 +50,11 @@ const Navber = () => {
                         <ul style={mebustyl} tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-[10]">
                             <li><NavLink to={'/'}>Home</NavLink></li>
                             <li><NavLink to={'/allservices'}>Services</NavLink></li>
-                            <li>
+                            <li className={user ? `inline-block` : `hidden`}>
                                 <NavLink to={'/'}>Dashboard</NavLink>
                                 <ul className="p-2 w-48 z-[20]">
                                     <li><NavLink to={'/addservice'}>Add Service</NavLink></li>
-                                    <li><NavLink to={'/'}>Manage Service</NavLink></li>
+                                    <li><NavLink to={'/manageservice'}>Manage Service</NavLink></li>
                                     <li><NavLink to={'/'}>Booked-Services</NavLink></li>
                                     <li><NavLink to={'/'}>Service-To-Do</NavLink></li>
                                 </ul>
@@ -73,12 +73,12 @@ const Navber = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li><NavLink to={'/'}>Home</NavLink></li>
                         <li><NavLink to={'/allservices'}>Services</NavLink></li>
-                        <li>
+                        <li  className={user ? `inline-block` : `hidden`}>
                             <details>
                                 <summary>Dashboard</summary>
                                 <ul style={mebustyl} className="p-2 w-56 z-[10]">
                                     <li><NavLink to={'/addservice'}>Add Service</NavLink></li>
-                                    <li><NavLink to={'/'}>Manage Service</NavLink></li>
+                                    <li><NavLink to={'/manageservice'}>Manage Service</NavLink></li>
                                     <li><NavLink to={'/'}>Booked-Services</NavLink></li>
                                     <li><NavLink to={'/'}>Service-To-Do</NavLink></li>
                                 </ul>
