@@ -49,7 +49,7 @@ const router = createBrowserRouter([
       {
         path:'/services/:id',
         element:<ProtectedRout><ServiceDetils></ServiceDetils></ProtectedRout>,
-        loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+        loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`,{credentials: 'include'})
       },
     ]
   }

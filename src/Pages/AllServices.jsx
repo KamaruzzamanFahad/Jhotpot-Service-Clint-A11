@@ -15,9 +15,9 @@ const AllServices = () => {
 
     return (
         <div>
-            <div className='grid grid-cols-1 gap-4 mt-10 mb-6'>
+            <div className='grid grid-cols-1 gap-4 mt-10 pb-6'>
 
-                <div className={count == 1 ? `hidden` : `flex justify-end items-cente w-full `}>
+                <div className={count == 1 ? `hidden` : `flex justify-center items-center w-full `}>
                     <span className="loading loading-spinner text-red-500 loading-lg"></span>
                 </div>
                 {
@@ -37,7 +37,7 @@ const AllServices = () => {
                                 <p>{item.price}</p>
                                 <p>{item.area}</p>
                                 <p className='w-[90%]'>{item.detils.substring(0, 90)}</p>
-                                <button className='bg-[#FF6C1A] w-72'>View Detail</button>
+                                <Link to={`/services/${item._id}`}> <button className='bg-[#FF6C1A] w-72 text-black'>View Detail</button></Link>
                             </div>
                         </div>
                     ))
