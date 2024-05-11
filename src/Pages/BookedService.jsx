@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const BookedService = () => {
     const [service, setservice] = useState([])
@@ -35,6 +36,9 @@ const BookedService = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Booked Services</title>
+            </Helmet>
             <div className='grid grid-cols-1 gap-5 mt-10'>
 
                 <div className={count == 1 ? `hidden` : `flex justify-end items-cente w-full `}>

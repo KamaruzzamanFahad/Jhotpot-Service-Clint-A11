@@ -74,7 +74,7 @@ const UpdateService = () => {
     return (
         <div className='px-[0%] sm:px-[10%]'>
             <Helmet>
-                <title>Add Craft & Art</title>
+                <title>Update Services</title>
             </Helmet>
             <div style={cardstyles} className=' p-12 px-5 md:px-20 rounded-3xl'>
 

@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import Root from './Pages/Root.jsx';
 import Home from './Pages/Home.jsx';
-import Error from './Pages/Error.jsx';
 import Eraaa from './Pages/Eraaa.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import AuthProvider from './Provider/AuthProvider.jsx';
@@ -19,7 +18,6 @@ import AddService from './Pages/AddService.jsx';
 import ProtectedRout from './Protected/ProtectedRout.jsx';
 import AllServices from './Pages/AllServices.jsx';
 import ServiceDetils from './Pages/ServiceDetils.jsx';
-import axios from 'axios';
 import ManageService from './Pages/ManageService.jsx';
 import UpdateService from './Pages/UpdateService.jsx';
 import BookedService from './Pages/BookedService.jsx';

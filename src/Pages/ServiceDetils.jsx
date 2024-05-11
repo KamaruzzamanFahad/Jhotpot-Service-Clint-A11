@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const ServiceDetils = () => {
     const { user } = useContext(AuthContext)
@@ -80,6 +81,7 @@ const ServiceDetils = () => {
 
     return (
         <div className='p-0 md:p-10 sm:pl-0 md:pl-[15%] lg:pl-[25%] sm:px-0 md:px-[3%]  lg:px-[10%]'>
+            <Helmet><title>Service Detils</title></Helmet>
             <div className='flex gap-3'>
                 <img src={userimage} alt="" className='w-14' />
                 <div>

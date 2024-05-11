@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const ManageService = () => {
     const [service, setservice] = useState([])
@@ -52,6 +53,7 @@ const ManageService = () => {
 
     return (
         <div>
+            <Helmet><title>Manage Services</title></Helmet>
             <div className='grid grid-cols-1 xl:grid-cols-2 gap-4 mt-10'>
 
                 <div className={count == 1 ? `hidden` : `flex justify-end items-cente w-full `}>

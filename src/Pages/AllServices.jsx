@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const AllServices = () => {
@@ -16,6 +17,9 @@ const AllServices = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>All Services</title>
+            </Helmet>
             <div className='grid grid-cols-1 gap-4 mt-10 pb-6'>
 
                 <div className={count == 1 ? `hidden` : `flex justify-center items-center w-full `}>
