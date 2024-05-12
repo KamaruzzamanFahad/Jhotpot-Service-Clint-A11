@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
 
 const ServiceToDo = () => {
     const [service, setservice] = useState([])
@@ -34,10 +35,21 @@ const ServiceToDo = () => {
         'background-color': (theme == "light") ? 'white' : '#ffffff22',
     };
 
-    const handlechange = (event) => {
-        console.log(event.target.value)
-        // find patch system in youtube
-        //and implement patch
+    const handlechange = (_id,event) => {
+        const value = event.target.value;
+        const doc = {status: value}
+        axios.patch(`http://localhost:5000/updatestatus/${_id}`,doc, { withCredentials: true })
+        .then(res => {
+            console.log(res.data)
+            if(res.data.modifiedCount > 0){
+                Swal.fire({
+                    title: 'Success !',
+                    text: 'Status Updated Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                })
+            }
+        })
     }
 
     return (
@@ -96,7 +108,7 @@ const ServiceToDo = () => {
                                     </td>
                                     <td>{item.Serviceprice}</td>
                                     <th>
-                                        <select onChange={handlechange} className={theme} defaultValue={item.status}>
+                                        <select onChange={(event)=> handlechange(item._id,event)} className={theme} defaultValue={item.status}>
                                             <option style={normal}>pending</option>
                                             <option>working</option>
                                             <option>completed</option>
