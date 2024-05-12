@@ -12,7 +12,7 @@ const ManageService = () => {
     const [dependency, setdependency] = useState([0, 2])
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/myservice?email=${user.email}`, { withCredentials: true })
+        axios.get(`https://server-electronic-item-repairing-services.vercel.app/myservice?email=${user.email}`, { withCredentials: true })
             .then(res => {
                 setservice(res.data)
                 setcount(1)
@@ -35,7 +35,7 @@ const ManageService = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/delete/${id}`, { withCredentials: true })
+                axios.delete(`https://server-electronic-item-repairing-services.vercel.app/delete/${id}`, { withCredentials: true })
                     .then(res => {
                         console.log(res.data)
                         if (res.data.deletedCount > 0) {

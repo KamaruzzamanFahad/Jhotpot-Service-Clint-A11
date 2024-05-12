@@ -1,24 +1,36 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const PopullerService = () => {
     const [service, setservice] = useState([])
     const [count, setcount] = useState(0)
     useEffect(() => {
-        axios.get('http://localhost:5000/Servicessix', { withCredentials: true })
+        axios.get('https://server-electronic-item-repairing-services.vercel.app/Servicessix', { withCredentials: true })
             .then(res => {
                 setservice(res.data)
                 setcount(1)
             })
     }, [])
     console.log(service)
+    AOS.init({
+        offset: 5,
+        duration: 500,
+        easing: 'ease-in-sine',
+        delay: 100,
+    });
 
     return (
-        <div>
-            <div>
-                <h1 className='text-center mt-14 mb-2'>Popular Services</h1>
-                <p className='px-[5%] md:px-[10%] xl:px-[20%] text-center mb-10'>Explore this section to discover the features and functionalities users love most. Find helpful resources and guides to streamline your experience, all in one convenient place.</p>
+        <div data-aos="fade-up"
+            data-aos-duration="800">
+            <div data-aos="fade-up"
+                data-aos-duration="800">
+                <h1 data-aos="fade-up"
+                    data-aos-duration="800" className='text-center mt-14 mb-2'>Popular Services</h1>
+                <p data-aos="fade-up"
+                    data-aos-duration="800" className='px-[5%] md:px-[10%] xl:px-[20%] text-center mb-10'>Explore this section to discover the features and functionalities users love most. Find helpful resources and guides to streamline your experience, all in one convenient place.</p>
             </div>
 
             <div className='grid grid-cols-1 xl:grid-cols-2 gap-4 mt-10'>
@@ -28,7 +40,8 @@ const PopullerService = () => {
                 </div>
                 {
                     service.map((item, i) => (
-                        <div className='flex flex-col sm:flex-row p-5 border-2 rounded-xl gap-5 border-[#ff515137]'>
+                        <div data-aos="fade-up"
+                            data-aos-duration="800" className='flex flex-col sm:flex-row p-5 border-2 rounded-xl gap-5 border-[#ff515137]'>
                             <div>
                                 <img src={item.image} alt="" className='w-full sm:w-96 md:w-80 h-full rounded-xl' />
                             </div>
@@ -49,7 +62,8 @@ const PopullerService = () => {
                 }
             </div>
             <div className={count == 0 ? `hidden` : `flex justify-center items-center`}>
-                <Link to={'/allservices'}>
+                <Link data-aos="fade-up"
+        data-aos-duration="800" to={'/allservices'}>
                     <button className='bg-[#FF6C1A] w-72 m-5 font-semibold text-black'>Show All</button>
                 </Link>
             </div>

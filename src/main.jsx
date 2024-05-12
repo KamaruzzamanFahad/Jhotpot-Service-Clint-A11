@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       {
         path:'/services/:id',
         element:<ProtectedRout><ServiceDetils></ServiceDetils></ProtectedRout>,
-        loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`,{credentials: 'include'})
+        loader:({params}) => fetch(`https://server-electronic-item-repairing-services.vercel.app/services/${params.id}`,{credentials: 'include'})
       },
       {
         path:'/manageservice',

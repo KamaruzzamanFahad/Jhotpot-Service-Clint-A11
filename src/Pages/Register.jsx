@@ -106,7 +106,7 @@ const Register = () => {
                                         <span style={lable} className="label-text">Password</span>
                                     </label>
                                     <div style={inputstylthem} className='flex items-center input input-bordered'>
-                                        <input name='password' type={type} placeholder="password" className="w-full" required />
+                                        <input name='password' type={type} placeholder="password" className="w-full input border-none" required />
                                         {
                                             type == "password" ? <FaEyeSlash onClick={() => settype("text")} /> : <FaEye onClick={() => settype("password")} />
                                         }

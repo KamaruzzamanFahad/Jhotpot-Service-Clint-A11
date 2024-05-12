@@ -10,7 +10,7 @@ const ServiceToDo = () => {
     const [count, setcount] = useState(0)
     const { user } = useContext(AuthContext);
     useEffect(() => {
-        axios.get(`http://localhost:5000/servicetodo?email=${user.email}`, { withCredentials: true })
+        axios.get(`https://server-electronic-item-repairing-services.vercel.app/servicetodo?email=${user.email}`, { withCredentials: true })
             .then(res => {
                 setservice(res.data)
                 setcount(1)
@@ -38,7 +38,7 @@ const ServiceToDo = () => {
     const handlechange = (_id,event) => {
         const value = event.target.value;
         const doc = {status: value}
-        axios.patch(`http://localhost:5000/updatestatus/${_id}`,doc, { withCredentials: true })
+        axios.patch(`https://server-electronic-item-repairing-services.vercel.app/updatestatus/${_id}`,doc, { withCredentials: true })
         .then(res => {
             console.log(res.data)
             if(res.data.modifiedCount > 0){
@@ -72,10 +72,10 @@ const ServiceToDo = () => {
                         <tr style={normal}>
                             <th>
                                 <label>
-                                    <input type="checkbox" className="checkbox" />
+                                    
                                 </label>
                             </th>
-                            <th className='hidden md:inline'>Customer</th>
+                            <th className='hidden md:block'>Customer</th>
                             <th>serviceName</th>
                             <th>Price</th>
                             <th>Status</th>

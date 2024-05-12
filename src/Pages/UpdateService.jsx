@@ -52,7 +52,7 @@ const UpdateService = () => {
         const item = { name, price, detils, image,area, username, email, userimage }
         console.log(item)
 
-        axios.put(`http://localhost:5000/updateservice/${_id}`,item,{withCredentials: true})
+        axios.put(`https://server-electronic-item-repairing-services.vercel.app/updateservice/${_id}`,item,{withCredentials: true})
             .then(res => {
                 console.log(res.data)
                 if (res.data.modifiedCount > 0) {

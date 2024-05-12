@@ -18,3 +18,7 @@
 .sadobl {
     text-shadow: 2px 2px 5px #000000;
 }
+.inputfoc:focus{
+    outline: none;
+    border: none;
+}

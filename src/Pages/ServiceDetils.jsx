@@ -58,7 +58,7 @@ const ServiceDetils = () => {
         };
         console.log(item)
 
-        axios.post('http://localhost:5000/addpurchase', item, {withCredentials: true})
+        axios.post('https://server-electronic-item-repairing-services.vercel.app/addpurchase', item, {withCredentials: true})
         .then(res => {
             console.log(res.data)
             if(res.data.insertedId){

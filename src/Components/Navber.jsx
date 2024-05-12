@@ -9,25 +9,25 @@ const Navber = () => {
 
 
     const [theme, settheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : "light")
-    const [ischack, setcheck] = useState((theme == "light") ? true : false)
+    const [isMarkchack, setMarkchack] = useState((theme == "light") ? true : false)
 
 
     const darklighandle = (e) => {
-        if (ischack) {
-            setcheck(false)
+        if (isMarkchack) {
+            setMarkchack(false)
             localStorage.setItem("theme", "dark")
             settheme("dark")
         }
         else {
-            setcheck(true)
+            setMarkchack(true)
             localStorage.setItem("theme", "light")
             settheme("light")
         }
-        console.log(ischack)
+        console.log(isMarkchack)
     }
     const cardthemesty = {
         color: (theme == "light") ? 'black' : 'rgb(240, 240, 240)',
-        'background-color': (theme == "light") ? '#eeeeee' : '#ffffff22',
+        'background-color': (theme == "light") ? 'White' : 'Black',
     };
 
     const mebustyl = {
@@ -90,7 +90,7 @@ const Navber = () => {
 
                     <div className="form-control mr-2">
                         <label className="label cursor-pointer">
-                            <input checked={!ischack} onChange={darklighandle} type="checkbox" className="toggle" />
+                            <input checked={!isMarkchack} onChange={darklighandle} type="checkbox" className="toggle" />
                         </label>
                     </div>
                     {
@@ -108,7 +108,7 @@ const Navber = () => {
                             </div>
                         </>
                             : <div className='flex justify-end items-center flex-row'>
-                                <NavLink to={'/login'}><button className="btn">Log In</button></NavLink>
+                                <NavLink to={'/login'}><button className=" text-black bg-[#FF6C1A]">Log In</button></NavLink>
                             </div>
 
 

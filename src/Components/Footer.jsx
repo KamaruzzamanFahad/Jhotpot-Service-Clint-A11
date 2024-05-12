@@ -68,12 +68,22 @@ const Footer = () => {
                 </div>
 
                 <form >
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center gap-2 mb-4'>
+                        <p className='font-extrabold text-xl'>Connect with us
+                        </p>
+                    </div>
+                    <div className="flex gap-5">
+                        <Link className={`${theme} opacity-75 text-xl`} to={'/'} ><FaGoogle /></Link>
+                        <Link className={`${theme} opacity-75 text-xl`} to={'/'} ><FaFacebook /></Link>
+                        <Link className={`${theme} opacity-75 text-2xl`} to={'/'} ><IoLogoLinkedin /></Link>
+                    </div>
+
+                    <div className='flex items-center gap-2 mt-4'>
                         <p className='font-extrabold text-xl'>Newsletter
                         </p>
                     </div>
                     <fieldset className="form-control ">
-                        <label className="label mt-2">
+                        <label className="label">
                             <span>Enter your e-mail to get the latest Jhotpot Service info</span>
                         </label>
                         <div className="join mt-2 w-[95%]">
@@ -83,19 +93,11 @@ const Footer = () => {
                         <img src="socai.png" width={'30%'} alt="" className='mt-4' />
                     </fieldset>
 
-                    <div className='flex items-center gap-2 mt-4 mb-2'>
-                        <p className='font-extrabold text-xl'>Connect with us
-                        </p>
-                    </div>
-                    <div className="flex gap-5">
-                        <Link className={`${theme} opacity-75 text-xl`} to={'/'} ><FaGoogle /></Link>
-                        <Link className={`${theme} opacity-75 text-xl`} to={'/'} ><FaFacebook /></Link>
-                        <Link className={`${theme} opacity-75 text-2xl`} to={'/'} ><IoLogoLinkedin /></Link>
-                    </div>
+
                 </form>
             </footer>
 
-            <h1 className="text-center text-lg pb-5 opacity-55">Copyright Jhotpot Service ! All Rights Reserved</h1>
+            <h1 className="text-center text-lg pb-5 opacity-55">Copyright © Jhotpot Service. !All Rights Reserved.</h1>
         </div>
     );
 };

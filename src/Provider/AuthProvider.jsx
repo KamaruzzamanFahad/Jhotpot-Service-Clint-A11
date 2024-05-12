@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
             setuser(user)
             setlooding(false)
 
-            axios.post('http://localhost:5000/jwt',useremail, {withCredentials: true,})
+            axios.post('https://server-electronic-item-repairing-services.vercel.app/jwt',useremail, {withCredentials: true,})
             .then(res =>{
                 console.log(res.data)
             })
@@ -50,7 +50,7 @@ const AuthProvider = ({ children }) => {
             setlooding(false)
             setuser(null)
 
-            axios.post('http://localhost:5000/logout',useremail,{withCredentials: true,})
+            axios.post('https://server-electronic-item-repairing-services.vercel.app/logout',useremail,{withCredentials: true,})
             .then(res =>{
                 console.log(res.data)
             })

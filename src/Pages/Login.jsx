@@ -89,7 +89,7 @@ const Login = () => {
                                     </label>
 
                                     <div style={inputstylthem} className='flex items-center input input-bordered'>
-                                        <input name='password' type={type} placeholder="password" className="w-full" required />
+                                        <input name='password' type={type} placeholder="password" className="input w-full border-none outline-none" required />
                                         {
                                             type == "password" ? <FaEyeSlash onClick={() => settype("text")} /> : <FaEye onClick={() => settype("password")} />
                                         }

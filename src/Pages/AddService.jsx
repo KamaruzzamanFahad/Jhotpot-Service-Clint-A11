@@ -16,10 +16,10 @@ const AddService = () => {
     });
     const cardthemesty = {
         color: (theme == "light") ? 'black' : 'rgb(240, 240, 240)',
-        'background-color': (theme == "light") ? '#F4F3F0' : '#ffffff22',
+        'background-color': (theme == "light") ? '#F4F0EF' : '#2F2F2F',
     };
 
-    const inputstylthem = {
+    const fildinput = {
         color: (theme == "light") ? 'black' : 'rgb(240, 240, 240)',
         'background-color': (theme == "light") ? 'white' : '#ffffff22',
     };
@@ -47,7 +47,7 @@ const AddService = () => {
         const item = { name, price, detils, image,area, username, email, userimage }
         console.log(item)
 
-        axios.post('http://localhost:5000/AddService', item, {withCredentials: true})
+        axios.post('https://server-electronic-item-repairing-services.vercel.app/AddService', item, {withCredentials: true})
             .then(res => {
                 console.log(res.data)
                 if (res.data.insertedId) {
@@ -84,26 +84,26 @@ const AddService = () => {
                     </div>
                     <div className='md:col-span-2'>
                         <h2 className='mb-2 font-semibold'>Service Image</h2>
-                        <input style={inputstylthem} required className='w-full p-2 outline-none' type="url" placeholder='Enter Image URL' name='image' />
+                        <input style={fildinput} required className='w-full p-2 outline-none' type="url" placeholder='Enter Image URL' name='image' />
                     </div>
                     <div className='md:col-span-2'>
                         <h2 className='mb-2 font-semibold'>Service Name</h2>
-                        <input style={inputstylthem} required className='w-full p-2 outline-none' type="text" placeholder='Enter Service Name' name='name' />
+                        <input style={fildinput} required className='w-full p-2 outline-none' type="text" placeholder='Enter Service Name' name='name' />
                     </div>
                     <div>
                         <h2 className='mb-2 font-semibold'>Price</h2>
-                        <input style={inputstylthem} required className='w-full p-2 outline-none' type="text" placeholder='Enter Service price' name='price' />
+                        <input style={fildinput} required className='w-full p-2 outline-none' type="text" placeholder='Enter Service price' name='price' />
                     </div>
                     <div>
                         <h2 className='mb-2 font-semibold'>Service Area</h2>
-                        <input style={inputstylthem} required className='w-full p-2 outline-none' type="text" placeholder='Enter Service Area' name='area' />
+                        <input style={fildinput} required className='w-full p-2 outline-none' type="text" placeholder='Enter Service Area' name='area' />
                     </div>
                     <div className='md:col-span-2'>
                         <h2 className='mb-2 font-semibold'>Description</h2>
-                        <textarea style={inputstylthem} required className='w-full p-2 outline-none' name="detils" cols="30" rows="5" placeholder='Enter Service Description'></textarea>
+                        <textarea style={fildinput} required className='w-full p-2 outline-none' name="detils" cols="30" rows="5" placeholder='Enter Service Description'></textarea>
 
                     </div>
-                    <button className='md:col-span-2 bg-[#FF6C1A] text-[#ffffff] border-2 border-[#331A15] rounded-xl font-bold'>Add Service</button>
+                    <button className='md:col-span-2 bg-[#FF6C1A] text-[#ffffff] rounded-xl font-bold'>Add Service</button>
                 </form>
             </div>
         </div>

@@ -9,7 +9,7 @@ const BookedService = () => {
     const [count, setcount] = useState(0)
     const { user } = useContext(AuthContext);
     useEffect(() => {
-        axios.get(`http://localhost:5000/bookedservices?email=${user.email}`, { withCredentials: true })
+        axios.get(`https://server-electronic-item-repairing-services.vercel.app/bookedservices?email=${user.email}`, { withCredentials: true })
             .then(res => {
                 setservice(res.data)
                 setcount(1)
@@ -54,7 +54,7 @@ const BookedService = () => {
                         <tr style={normal}>
                             <th>
                                 <label>
-                                    <input type="checkbox" className="checkbox" />
+                                    
                                 </label>
                             </th>
                             <th>serviceName</th>
