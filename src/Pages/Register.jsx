@@ -1,6 +1,6 @@
 
 import { useContext, useState } from "react";
-import { Link, useNavigate, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet-async";
@@ -10,10 +10,8 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Swal from 'sweetalert2'
 
 const Register = () => {
-
     const { CreateUserByEmail, UpdateInfo, setuser } = useContext(AuthContext);
     const goto = useNavigate();
-
 
     const reginhandle = (e) => {
         e.preventDefault();
@@ -57,7 +55,6 @@ const Register = () => {
 
     const [type, settype] = useState('password')
 
-
     const [theme, settheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : "light")
     window.addEventListener('click', function (event) {
         if (event.target.classList[0] == "toggle") {
@@ -65,12 +62,12 @@ const Register = () => {
             settheme(theme)
         }
     });
-    const cardstyles = {
+    const cardthemesty = {
         color: (theme == "light") ? 'black' : 'rgb(240, 240, 240)',
         'background-color': (theme == "light") ? 'white' : '#ffffff22',
     };
 
-    const fildinput = {
+    const inputstylthem = {
         color: (theme == "light") ? 'black' : 'rgb(240, 240, 240)',
         'background-color': (theme == "light") ? 'white' : '#ffffff22',
     };
@@ -78,9 +75,6 @@ const Register = () => {
     const lable = {
         color: (theme == "light") ? 'black' : 'white',
     };
-
-
-
 
     return (
         <div>
@@ -92,26 +86,26 @@ const Register = () => {
                 <div className="hero pb-10">
                     <div className="hero-content flex-col lg:flex-row-reverse">
 
-                        <div style={cardstyles} className="card shrink-0 max-w-sm shadow-2xl  p-10  w-80 sm:w-96">
+                        <div style={cardthemesty} className="card shrink-0 max-w-sm shadow-2xl  p-10  w-80 sm:w-96">
                             <h1 className='text-3xl mb-2 font-semibold'>Register New account</h1>
                             <form onSubmit={reginhandle} className="card-body mb-2 p-0">
                                 <div className="form-control">
                                     <label className="label">
                                         <span style={lable} className="label-text">Name</span>
                                     </label>
-                                    <input style={fildinput} name='Name' type="text" placeholder="Name" className="input input-bordered" required />
+                                    <input style={inputstylthem} name='Name' type="text" placeholder="Name" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span style={lable} className="label-text">Email</span>
                                     </label>
-                                    <input style={fildinput} name='email' type="email" placeholder="email" className="input input-bordered" required />
+                                    <input style={inputstylthem} name='email' type="email" placeholder="email" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span style={lable} className="label-text">Password</span>
                                     </label>
-                                    <div style={fildinput} className='flex items-center input input-bordered'>
+                                    <div style={inputstylthem} className='flex items-center input input-bordered'>
                                         <input name='password' type={type} placeholder="password" className="w-full" required />
                                         {
                                             type == "password" ? <FaEyeSlash onClick={() => settype("text")} /> : <FaEye onClick={() => settype("password")} />
@@ -123,7 +117,7 @@ const Register = () => {
                                     <label className="label">
                                         <span style={lable} className="label-text">photoURL</span>
                                     </label>
-                                    <input style={fildinput} name='photoURL' type="url" placeholder="photoURL" className="input input-bordered" required />
+                                    <input style={inputstylthem} name='photoURL' type="url" placeholder="photoURL" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control mt-1">
                                     <button className="btn w-fu  bg-[#FF6C1A] text-white outline-none border-none">Register</button>
@@ -140,5 +134,4 @@ const Register = () => {
         </div>
     );
 };
-
 export default Register;

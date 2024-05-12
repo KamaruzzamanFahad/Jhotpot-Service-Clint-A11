@@ -17,7 +17,7 @@ const Footer = () => {
         }
     });
 
-    const fildinput = {
+    const inputstylthem = {
         color: (theme == "light") ? 'black' : 'rgb(240, 240, 240)',
         'background-color': (theme == "light") ? 'white' : '#ffffff22',
     };
@@ -77,7 +77,7 @@ const Footer = () => {
                             <span>Enter your e-mail to get the latest Jhotpot Service info</span>
                         </label>
                         <div className="join mt-2 w-[95%]">
-                            <input style={fildinput} type="text" placeholder="Your e-mail" className="input input-bordered join-item w-full" />
+                            <input style={inputstylthem} type="text" placeholder="Your e-mail" className="input input-bordered join-item w-full" />
                             <button disabled className="bg-[#FF6C1A] text-white rounded-l-none ml-[-2px]">Subscribe</button>
                         </div>
                         <img src="socai.png" width={'30%'} alt="" className='mt-4' />

@@ -6,7 +6,7 @@ const PopullerService = () => {
     const [service, setservice] = useState([])
     const [count, setcount] = useState(0)
     useEffect(() => {
-        axios.get('http://localhost:5000/services', { withCredentials: true })
+        axios.get('http://localhost:5000/Servicessix', { withCredentials: true })
             .then(res => {
                 setservice(res.data)
                 setcount(1)

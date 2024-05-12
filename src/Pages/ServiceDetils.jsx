@@ -18,12 +18,12 @@ const ServiceDetils = () => {
             settheme(theme)
         }
     });
-    const cardstyles = {
+    const cardthemesty = {
         color: (theme == "light") ? 'black' : 'rgb(240, 240, 240)',
         'background-color': (theme == "light") ? '#eeeeee' : '#1E1E1E',
     };
 
-    const fildinput = {
+    const inputstylthem = {
         color: (theme == "light") ? 'black' : 'rgb(240, 240, 240)',
         'background-color': (theme == "light") ? 'white' : '#ffffff22',
     };
@@ -110,28 +110,28 @@ const ServiceDetils = () => {
 
             {/* You can open the modal using document.getElementById('ID').showModal() method */}
             <dialog id="my_modal_4" className="modal">
-                <div style={cardstyles} className="modal-box">
+                <div style={cardthemesty} className="modal-box">
                     <form onSubmit={handlePurchase} className='flex flex-col'>
                         <p className='text-sm mt-2'>ServiceId</p>
-                        <input style={fildinput} type="text" readOnly value={_id} placeholder="ServiceId" className="input input-bordered w-full" />
+                        <input style={inputstylthem} type="text" readOnly value={_id} placeholder="ServiceId" className="input input-bordered w-full" />
                         <p className='text-sm mt-2'>Service Name</p>
-                        <input style={fildinput} type="text" readOnly value={name} placeholder="Service Name" className="input input-bordered w-full" />
+                        <input style={inputstylthem} type="text" readOnly value={name} placeholder="Service Name" className="input input-bordered w-full" />
                         <p className='text-sm mt-2'>Service Image</p>
-                        <input style={fildinput} type="text" readOnly value={image} placeholder="Service Image" className="input input-bordered w-full" />
+                        <input style={inputstylthem} type="text" readOnly value={image} placeholder="Service Image" className="input input-bordered w-full" />
                         <p className='text-sm mt-2'>Provider email</p>
-                        <input style={fildinput} type="text" readOnly value={email} placeholder="Provider email" className="input input-bordered w-full" />
+                        <input style={inputstylthem} type="text" readOnly value={email} placeholder="Provider email" className="input input-bordered w-full" />
                         <p className='text-sm mt-2'>Provider Name</p>
-                        <input style={fildinput} type="text" readOnly value={username} placeholder="Provider Name" className="input input-bordered w-full" />
+                        <input style={inputstylthem} type="text" readOnly value={username} placeholder="Provider Name" className="input input-bordered w-full" />
                         <p className='text-sm mt-2'>Current User email</p>
-                        <input style={fildinput} type="text" readOnly value={user.email} placeholder="Current User email" className="input input-bordered w-full" />
+                        <input style={inputstylthem} type="text" readOnly value={user.email} placeholder="Current User email" className="input input-bordered w-full" />
                         <p className='text-sm mt-2'>Current User Name</p>
-                        <input style={fildinput} type="text" readOnly value={user.displayName} placeholder="Current User Name" className="input input-bordered w-full" />
+                        <input style={inputstylthem} type="text" readOnly value={user.displayName} placeholder="Current User Name" className="input input-bordered w-full" />
                         <p className='text-sm mt-2'>Service Taking Date</p>
-                        <input style={fildinput} name='serviceDate' required type="date" placeholder="Service Taking Date" className="input input-bordered w-full" />
+                        <input style={inputstylthem} name='serviceDate' required type="date" placeholder="Service Taking Date" className="input input-bordered w-full" />
                         <p className='text-sm mt-2'>Price</p>
-                        <input style={fildinput} readOnly value={price} type="text" placeholder="Price" className="input input-bordered w-full" />
+                        <input style={inputstylthem} readOnly value={price} type="text" placeholder="Price" className="input input-bordered w-full" />
                         <p className='text-sm mt-2'>Special instruction</p>
-                        <textarea style={fildinput} required placeholder="anything like address , area, customized service plan." name="instructions" id="" className="input input-bordered w-full"></textarea>
+                        <textarea style={inputstylthem} required placeholder="anything like address , area, customized service plan." name="instructions" id="" className="input input-bordered w-full"></textarea>
                         <button className='bg-[#FF6C1A] w-full mt-2 '>Purchase</button>
                     </form>
                     <div className="modal-action">

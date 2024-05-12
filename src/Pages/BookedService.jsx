@@ -24,7 +24,7 @@ const BookedService = () => {
             settheme(theme)
         }
     });
-    const cardstyles = {
+    const cardthemesty = {
         color: (theme == "light") ? 'black' : 'rgb(240, 240, 240)',
         'background-color': (theme == "light") ? '#eeeeee' : '#ffffff22',
     };
@@ -78,7 +78,7 @@ const BookedService = () => {
                                     <td>
                                         {item.serviceName}
                                         <br />
-                                        <span style={cardstyles} className="badge badge-ghost badge-sm">{item.serviceDate}</span>
+                                        <span style={cardthemesty} className="badge badge-ghost badge-sm">{item.serviceDate}</span>
                                     </td>
                                     <td>{item.Serviceprice}</td>
                                     <th>

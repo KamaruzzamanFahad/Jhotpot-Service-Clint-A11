@@ -14,12 +14,12 @@ const AddService = () => {
             settheme(theme)
         }
     });
-    const cardstyles = {
+    const cardthemesty = {
         color: (theme == "light") ? 'black' : 'rgb(240, 240, 240)',
         'background-color': (theme == "light") ? '#F4F3F0' : '#ffffff22',
     };
 
-    const fildinput = {
+    const inputstylthem = {
         color: (theme == "light") ? 'black' : 'rgb(240, 240, 240)',
         'background-color': (theme == "light") ? 'white' : '#ffffff22',
     };
@@ -72,7 +72,7 @@ const AddService = () => {
             <Helmet>
                 <title>Add Services</title>
             </Helmet>
-            <div style={cardstyles} className=' p-12 px-5 md:px-20 rounded-3xl'>
+            <div style={cardthemesty} className=' p-12 px-5 md:px-20 rounded-3xl'>
 
                 <form onSubmit={handlesubmit} action="" className='grid grid-cols-1 md:grid-cols-2 gap-5 mt-5'>
                     <div className='flex gap-3'>
@@ -84,23 +84,23 @@ const AddService = () => {
                     </div>
                     <div className='md:col-span-2'>
                         <h2 className='mb-2 font-semibold'>Service Image</h2>
-                        <input style={fildinput} required className='w-full p-2 outline-none' type="url" placeholder='Enter Image URL' name='image' />
+                        <input style={inputstylthem} required className='w-full p-2 outline-none' type="url" placeholder='Enter Image URL' name='image' />
                     </div>
                     <div className='md:col-span-2'>
                         <h2 className='mb-2 font-semibold'>Service Name</h2>
-                        <input style={fildinput} required className='w-full p-2 outline-none' type="text" placeholder='Enter Service Name' name='name' />
+                        <input style={inputstylthem} required className='w-full p-2 outline-none' type="text" placeholder='Enter Service Name' name='name' />
                     </div>
                     <div>
                         <h2 className='mb-2 font-semibold'>Price</h2>
-                        <input style={fildinput} required className='w-full p-2 outline-none' type="text" placeholder='Enter Service price' name='price' />
+                        <input style={inputstylthem} required className='w-full p-2 outline-none' type="text" placeholder='Enter Service price' name='price' />
                     </div>
                     <div>
                         <h2 className='mb-2 font-semibold'>Service Area</h2>
-                        <input style={fildinput} required className='w-full p-2 outline-none' type="text" placeholder='Enter Service Area' name='area' />
+                        <input style={inputstylthem} required className='w-full p-2 outline-none' type="text" placeholder='Enter Service Area' name='area' />
                     </div>
                     <div className='md:col-span-2'>
                         <h2 className='mb-2 font-semibold'>Description</h2>
-                        <textarea style={fildinput} required className='w-full p-2 outline-none' name="detils" cols="30" rows="5" placeholder='Enter Service Description'></textarea>
+                        <textarea style={inputstylthem} required className='w-full p-2 outline-none' name="detils" cols="30" rows="5" placeholder='Enter Service Description'></textarea>
 
                     </div>
                     <button className='md:col-span-2 bg-[#FF6C1A] text-[#ffffff] border-2 border-[#331A15] rounded-xl font-bold'>Add Service</button>

@@ -12,15 +12,12 @@ const AuthProvider = ({ children }) => {
     const [looding,setlooding] = useState(true)
 
     const CreateUserByEmail = (email,password) => {
-        
         return createUserWithEmailAndPassword(auth,email,password)
     }
     const LoginByEmail = (email,password) => {
-        
        return signInWithEmailAndPassword(auth,email,password)
     }
     const LiginByGoogle = () =>{
-        
        return signInWithPopup(auth,GoogleProvider)
     }
     const UpdateInfo = (name,photo) =>{
@@ -29,16 +26,11 @@ const AuthProvider = ({ children }) => {
             photoURL:photo,
         })
     }
+
     const LogOut = () =>{
         
         signOut(auth)
     }
-
-
-
-
-
-
 
     onAuthStateChanged(auth, (user) =>{
         const email = user?.email || user?.email;
@@ -52,7 +44,6 @@ const AuthProvider = ({ children }) => {
             .then(res =>{
                 console.log(res.data)
             })
-            
         }
         else{
             console.log('user log out')

@@ -25,7 +25,7 @@ const Navber = () => {
         }
         console.log(ischack)
     }
-    const cardstyles = {
+    const cardthemesty = {
         color: (theme == "light") ? 'black' : 'rgb(240, 240, 240)',
         'background-color': (theme == "light") ? '#eeeeee' : '#ffffff22',
     };
@@ -101,7 +101,7 @@ const Navber = () => {
                                         <img alt="user" src={user.photoURL} />
                                     </div>
                                 </div>
-                                <ul style={cardstyles} tabIndex={0} className="mt-0 z-[1] p-2 shadow menu menu-sm dropdown-content bg-[#ececec] rounded-box w-52">
+                                <ul style={cardthemesty} tabIndex={0} className="mt-0 z-[1] p-2 shadow menu menu-sm dropdown-content bg-[#ececec] rounded-box w-52">
                                     <li><a >{user.displayName}</a ></li>
                                     <li><a onClick={LogOut}>Logout</a ></li>
                                 </ul>
