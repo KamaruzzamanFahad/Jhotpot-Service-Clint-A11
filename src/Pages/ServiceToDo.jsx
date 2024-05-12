@@ -75,7 +75,7 @@ const ServiceToDo = () => {
                                     <input type="checkbox" className="checkbox" />
                                 </label>
                             </th>
-                            <th>Customer</th>
+                            <th className='hidden md:inline'>Customer</th>
                             <th>serviceName</th>
                             <th>Price</th>
                             <th>Status</th>
@@ -89,25 +89,25 @@ const ServiceToDo = () => {
                         {
                             service.map((item, i) => (
                                 <tr>
-                                    <td>
+                                    <td className='px-0 md:px-2'>
                                         <div className="flex items-center gap-3">
                                             <img src={item.serviceImag} alt="" className='w-28  rounded-xl' />
                                         </div>
-                                    </td>
-                                    <td>
+                                    </td >
+                                    <td className='hidden md:inline px-0 md:px-2'>
                                         <div>
                                             <div className="font-bold">{item.userName}</div>
                                             <div className="text-sm opacity-50">{item.userEMail}</div>
                                             <div className="text-sm opacity-50">{item.instructions}</div>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td className='px-0 md:px-2'>
                                         {item.serviceName}
                                         <br />
                                         <span style={cardstyles} className="badge badge-ghost badge-sm">{item.serviceDate}</span>
                                     </td>
-                                    <td>{item.Serviceprice}</td>
-                                    <th>
+                                    <td className='px-0 md:px-2'>{item.Serviceprice}</td>
+                                    <th className='px-0 md:px-2'>
                                         <select onChange={(event)=> handlechange(item._id,event)} className={theme} defaultValue={item.status}>
                                             <option style={normal}>pending</option>
                                             <option>working</option>
