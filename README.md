@@ -4,11 +4,16 @@
 Jhotpot Service is a web platform that simplifies electronic item repairs
 by connecting users with qualified service providers.
 
-## **Key Features:**
+## **Key Features:**<br>
+*Electronic Item Repairing Services*<br>
 -User Booking: Easily book repairing services for your electronic items through our user-friendly interface.<br>
 
 -Service Posting: Service providers can post their repairing services, reaching a wider audience and increasing their business visibility.<br>
+
 -Real-Time Status Tracking:*Track the status of your booked services in real-time. Service providers can update statuses to pending, working, or completed, keeping users informed every step of the way.<br>
+
+-service provider can easily manage and update his service<br>
+-user can directly contact service provider team and getting realtime update
 
 ## **How to Use**
 1.Visit* **jhotpotservice.com** and sign up for an account.<br>
