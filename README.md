@@ -1,6 +1,6 @@
 ## **Jhotpot Service** - *Electronic Item Repairing Services*
 
-## **Live site:** **jhotpotservice.com**
+## **Live site:** **https://jotpotservice-95ce1.web.app/**
 Jhotpot Service is a web platform that simplifies electronic item repairs
 by connecting users with qualified service providers.
 
@@ -16,7 +16,7 @@ by connecting users with qualified service providers.
 -user can directly contact service provider team and getting realtime update
 
 ## **How to Use**
-1.Visit* **jhotpotservice.com** and sign up for an account.<br>
+1.Visit* **https://jotpotservice-95ce1.web.app/** and sign up for an account.<br>
 2.Browse our list of repairing services or post your own if you're a service provider.<br>
 3.Select the service you need and book it with a few simple clicks.<br>
 4.Track the status of your booked service and communicate with the service provider if needed.<br>
